@@ -1,0 +1,146 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Relat'#243'rio'
+  ClientHeight = 424
+  ClientWidth = 832
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object FxRelatorios: TfrxReport
+    Version = '5.1.5'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43638.678627997700000000
+    ReportOptions.LastChange = 43638.700967303240000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 144
+    Top = 96
+    Datasets = <
+      item
+        DataSet = FrxDados
+        DataSetName = 'FrxDados'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        Height = 113.385900000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Memo1: TfrxMemoView
+          Left = 162.519790000000000000
+          Top = 37.795300000000000000
+          Width = 136.063080000000000000
+          Height = 18.897650000000000000
+          Memo.UTF8W = (
+            '[FrxDados."Nome"]')
+        end
+        object Memo2: TfrxMemoView
+          Left = 306.141930000000000000
+          Top = 37.795300000000000000
+          Width = 132.283550000000000000
+          Height = 18.897650000000000000
+          Memo.UTF8W = (
+            '[FrxDados."Sobrenome"]')
+        end
+        object Memo3: TfrxMemoView
+          Left = 68.031540000000000000
+          Top = 37.795300000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Memo.UTF8W = (
+            '[FrxDados."IdCLiente"]')
+        end
+        object Memo4: TfrxMemoView
+          Left = 498.897960000000000000
+          Top = 37.795300000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Memo.UTF8W = (
+            '[FrxDados."Idade"]')
+        end
+        object Line1: TfrxLineView
+          Left = 37.795300000000000000
+          Top = 71.811070000000000000
+          Width = 642.520100000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Memo5: TfrxMemoView
+          Left = 241.889920000000000000
+          Top = 3.779530000000000000
+          Width = 185.196970000000000000
+          Height = 18.897650000000000000
+          Memo.UTF8W = (
+            'RELAT'#211'RIOS DE CLIENTES')
+        end
+        object Memo6: TfrxMemoView
+          Left = 442.205010000000000000
+          Top = 37.795300000000000000
+          Width = 52.913420000000000000
+          Height = 18.897650000000000000
+          Memo.UTF8W = (
+            'IDADE:')
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        FillType = ftBrush
+        Height = 22.677180000000000000
+        Top = 275.905690000000000000
+        Width = 718.110700000000000000
+        object Memo7: TfrxMemoView
+          Left = 302.362400000000000000
+          Top = 3.779530000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Memo.UTF8W = (
+            'CLIENTE')
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Height = 22.677180000000000000
+        Top = 192.756030000000000000
+        Width = 718.110700000000000000
+        DataSet = FrxDados
+        DataSetName = 'FrxDados'
+        RowCount = 0
+      end
+    end
+  end
+  object FrxDados: TfrxDBDataset
+    UserName = 'FrxDados'
+    CloseDataSource = False
+    DataSet = Form1.ClientDataSet1
+    BCDToCurrency = False
+    Left = 224
+    Top = 96
+  end
+end

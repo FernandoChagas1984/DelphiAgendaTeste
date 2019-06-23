@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="5.1.5" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="43638,6786279977" ReportOptions.Description.Text="" ReportOptions.LastChange="43638,7428015046" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="FrxDados" DataSetName="FrxDados"/>
+  </Datasets>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxPageHeader Name="PageHeader1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="147,40167" Left="0" Top="18,89765" Width="718,1107">
+      <TfrxMemoView Name="Memo1" Left="185,19697" Top="86,92919" Width="98,26778" Height="18,89765" Text="[FrxDados.&#34;Nome&#34;]"/>
+      <TfrxMemoView Name="Memo2" Left="317,48052" Top="86,92919" Width="158,74026" Height="18,89765" Text="[FrxDados.&#34;Sobrenome&#34;]"/>
+      <TfrxMemoView Name="Memo3" Left="86,92919" Top="86,92919" Width="56,69295" Height="18,89765" Text="[FrxDados.&#34;IdCLiente&#34;]"/>
+      <TfrxMemoView Name="Memo4" Left="487,55937" Top="86,92919" Width="45,35436" Height="18,89765" Text="[FrxDados.&#34;Idade&#34;]"/>
+      <TfrxMemoView Name="Memo5" Left="211,65368" Top="3,77953" Width="260,78757" Height="18,89765" Font.Charset="1" Font.Color="32768" Font.Height="-16" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="RELATÓRIOS DE CLIENTES"/>
+      <TfrxMemoView Name="Memo6" Left="480,00031" Top="37,7953" Width="52,91342" Height="18,89765" Text="IDADE:"/>
+      <TfrxMemoView Name="Memo8" Left="75,5906" Top="37,7953" Width="64,25201" Height="18,89765" Text="CÓDIGO:"/>
+      <TfrxMemoView Name="Memo9" Left="188,9765" Top="37,7953" Width="52,91342" Height="18,89765" Text="NOME:"/>
+      <TfrxMemoView Name="Memo10" Left="317,48052" Top="37,7953" Width="98,26778" Height="18,89765" Text="SOBRENOME:"/>
+    </TfrxPageHeader>
+    <TfrxPageFooter Name="PageFooter1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="22,67718" Left="0" Top="309,92146" Width="718,1107">
+      <TfrxMemoView Name="Memo7" Left="272,12616" Top="3,77953" Width="151,1812" Height="18,89765" Font.Charset="1" Font.Color="32768" Font.Height="-16" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="CLIENTE ATIVO"/>
+    </TfrxPageFooter>
+    <TfrxMasterData Name="MasterData1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="22,67718" Left="0" Top="226,7718" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="FrxDados" DataSetName="FrxDados" RowCount="0"/>
+  </TfrxReportPage>
+</TfrxReport>

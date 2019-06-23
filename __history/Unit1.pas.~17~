@@ -1,0 +1,144 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DBXMSSQL, Data.FMTBcd, Data.DB,
+  Data.SqlExpr, Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids, Datasnap.DBClient,
+  Datasnap.Provider, Vcl.Buttons;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    txtNome: TEdit;
+    txtSobrenome: TEdit;
+    txtIdade: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Label4: TLabel;
+    txtCodigo: TEdit;
+    SQL: TSQLConnection;
+    Query: TSQLQuery;
+    Provedor: TDataSetProvider;
+    ClientDataSet1: TClientDataSet;
+    DataSource1: TDataSource;
+    Query2: TSQLQuery;
+    btnRelatorio: TButton;
+    btnPesquisar: TBitBtn;
+    DBGrid1: TDBGrid;
+    ClientDataSet1IdCLiente: TIntegerField;
+    ClientDataSet1Nome: TWideStringField;
+    procedure Button4Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    var operacao : string;
+    procedure LimparCampos;
+    procedure PreencheCampos;
+    procedure Cadastrar;
+    procedure Alterar;
+
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Alterar;
+begin
+
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+operacao := 'cadastrar';
+Cadastrar;
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+operacao := 'alterar';
+Cadastrar;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+LimparCampos;
+end;
+
+procedure TForm1.Cadastrar;
+begin
+
+Query2.Close;
+Query2.SQL.Clear;
+   if operacao = 'cadastrar' then
+   begin
+       Query2.SQL.Add('insert into TblTeste values (:Nome)');
+   end
+  else
+     if operacao = 'alterar' then
+   begin
+       Query2.SQL.Add('update TblTeste set Nome = :Nome  where IdCliente = : IdCliente');
+   end;
+//Query2.ParamByName('IdCliente').AsInteger := strtoint(txtCodigo.Text);
+Query2.ParamByName('Nome').AsString := txtNome.Text;
+//Query2.ParamByName('Sobrenome').AsString := txtSobrenome.Text;
+//Query2.ParamByName('Idade').AsInteger := strtoint(txtIdade.Text);
+try
+  Query2.ExecSQL();
+  Query.Refresh;
+  ClientDataSet1.Refresh;
+except
+  on E: Exception do
+      begin
+        ShowMessage('Erro ao cadastrar Cliente!');
+        Exit;
+      end;
+
+
+end;
+
+end;
+
+procedure TForm1.DBGrid1CellClick(Column: TColumn);
+begin
+PreencheCampos;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+PreencheCampos;
+end;
+
+procedure TForm1.LimparCampos;
+begin
+txtNome.Clear;
+txtSobrenome.Clear;
+txtIdade.Clear;
+txtNome.SetFocus;
+end;
+
+procedure TForm1.PreencheCampos;
+begin
+txtCodigo.Text := ClientDataSet1IdCliente.AsString;
+txtNome.Text := ClientDataSet1Nome.AsString;
+//txtSobrenome.Text := ClientDataSet1Sobrenome.AsString;
+//txtIdade.Text := ClientDataSet1Idade.AsString;
+
+end;
+
+end.
